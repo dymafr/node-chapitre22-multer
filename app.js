@@ -37,7 +37,7 @@ app.use(morgan('tiny'));
 app.get('/', async (req, res) => {
   try {
     const users = await User.find({}).exec();
-    const user = users && users.length ? users[0] : null;
+    const user = users && users.length ? users[users.length - 1] : null;
     res.render('index', { user });
   } catch (e) {
     next(e);

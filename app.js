@@ -82,7 +82,7 @@ app.use((err, req, res, next) => {
       color: true,
     })
   );
-  res.status(500).redirect('/');
+  res.redirect('/');
 });
 
 app.listen(3000);
